@@ -26,6 +26,8 @@ namespace MyBackend
             // Since we are using native notifications, we have to construct the payload in the format
             // the service is expecting. The example below is for sending a Toast notification on Windows 8
             var toast = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + TextBox1.Text + "</text></binding></visual></toast>";
+            
+            // This call essentialy broadcasts a push notification to ALL devices that are registered with the service. That easy!
             hub.SendWindowsNativeNotificationAsync(toast);
         }
     }
